@@ -1,0 +1,47 @@
+// ------------------------------
+// timestamp, duration of chat response
+
+:global(#sbChat) .chatDetails {
+   color: #6d6d6d;
+   font-size: 11px;
+   margin: 0;
+   margin-top: 12px;
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-between;
+   gap: 6px;
+
+
+   .timeDetails {
+      display: flex;
+      align-items: center;
+   }
+   
+   .chatTimestamp, .chatDuration {
+      cursor: default;
+      line-height: 1;
+      
+      &::first-letter {
+         text-transform: capitalize;
+      }
+   }
+   
+   .chatDuration {
+      padding-left: 5px;
+      border-left: 1px solid #ccc;
+      margin-left: 6px;
+      display: inline-flex;
+      align-items: center;
+      
+      svg {
+         margin-right: 2px;
+         width: 12px;
+         height: 12px;
+      }
+   }
+}
+
+
+:global(#sbChat) .user .chatDetails {
+   color: #fff;
+}

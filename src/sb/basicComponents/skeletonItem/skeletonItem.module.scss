@@ -1,0 +1,24 @@
+:global(#sb-root) {
+   .skeletonItem {
+      background: linear-gradient(90deg, #e3d7f9 25%, #f5f0fd 37%, #e3d7f9 63%);
+      background-size: 400% 100%;
+      border-radius: 16px;
+      display: block;
+      height: 16px;
+      width: 100%;
+      animation: loading 1.5s infinite;
+   
+      &:not(:last-child) {
+         margin-bottom: 16px;
+      }
+      
+      @keyframes loading {
+         0% {
+            background-position: 100% 50%;
+         }
+         100% {
+            background-position: 0% 50%;
+         }
+      }
+   } 
+}

@@ -1,0 +1,153 @@
+@use './../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sb-root) {
+   
+   .sortMenu {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      position: relative;
+
+      // @media screen and (min-width: $mobile-breakpoint) {
+      //    &:not(:only-child) {
+      //       border-right: 1px solid #ddd;
+      //       padding-right: 13px;
+      //    }
+      // }
+
+      
+      .sortMenuToggle {
+         // @include clear-button;
+         background-color: #e9e6ff;
+         border: none;
+         border-radius: 30px;
+         color: #6019bc;
+         font-size: 13px;
+         height: 30px;
+         font-weight: 700;
+         padding: 6px 16px;
+         transition: all 0.2s ease;
+         // text-transform: uppercase;
+
+         display: flex;
+         align-items: center;
+
+         // &:hover {
+         //    translate: 0 1px;
+         // }
+      }
+      
+      .sortMenuWrapper {
+         display: flex;
+         // flex-direction: column;
+         align-items: center;
+         gap: 8px;
+   
+         position: relative;
+      }
+      
+      
+      .sortMenuLabel {
+         color: #666;
+         font-size: .7rem;
+         line-height: 1;
+         margin: 0;
+         text-transform: uppercase;
+         
+         @media screen and (min-width: variables.$mobile-breakpoint) and (max-width: 992px) {
+            display: none;
+         }
+      }
+   }
+
+
+   .sortDirToggleGroup {
+      background-color: #efe7ff;
+      border-radius: 30px;
+      box-shadow: inset 0px 0px 2px 1px #ddd;
+      height: 30px;
+      padding: 3px;
+
+      display: flex;
+      align-items: center;
+      gap: 4px;
+   }
+
+   .sortDirToggle {
+      background-color: transparent;
+      border: 1px solid transparent;
+      display: grid;
+      place-items: center;
+      padding: 0px;
+      border-radius: 30px;
+      transition: all 0.2s ease;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+
+      &:hover {
+         background-color: #fff;
+      }
+
+      &.active {
+         background-color: #7639e2;
+         cursor: default;
+
+         &:first-child {   
+            box-shadow: 1px 0px 1px 1px #0004;
+         }
+
+         &:last-child {
+            box-shadow: -1px 0px 1px 1px #0004;
+         }
+
+         color: #fff;
+      }
+
+      svg {
+         height: 16px;
+         width: 16px;
+         stroke-width: 1.5px;
+         color: inherit;
+      }
+   }
+
+   .sortOptions {
+      margin: 0;
+      padding: 0;
+   
+      li:not(:last-child) {
+         border-bottom: 1px solid #e9edf2;
+      }
+   
+      button {
+         color: #000;
+         background: transparent;
+         border: none;
+      border-radius: 12px;
+
+         font-size: 13px;
+         font-weight: 400;
+         line-height: 24px;
+         padding: 4px 8px;
+         text-align: right;
+         white-space: nowrap;
+         width: 100%;
+
+         &:hover {
+            background-color: #fcf5ff;
+         }
+      }
+
+      .active{
+         font-weight: 700;
+         color: variables.$accent-color;
+      }
+   }
+}
+

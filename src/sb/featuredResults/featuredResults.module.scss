@@ -1,0 +1,120 @@
+@use '../../sb/css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+$mobile-breakpoint: variables.$mobile-breakpoint;
+
+$fr-background: #eee7ff;
+$fr-border-color: #f2dcff;
+$fr-border-radius: 16px;
+$fr-label-background: #7639e2;
+$fr-label-font: 10px;
+
+
+$title-color: variables.$accent-color;
+$title-hover-color: #5c38a1;
+$url-color: #654d6b;
+
+$title-font-size: 15px;
+$description-font-size: 14px;
+$url-font-size: 14px;
+
+
+:global(#sb-root) {
+   .featuredResultsContainer {
+      &:not(:empty) {
+         margin: 0 0 20px 0;
+         padding: 0;
+      }
+   }
+   
+   .label {
+      background-color: $fr-label-background;
+      border-radius: 0 8px 0 8px;
+      color: #fff;
+      display: inline-block;
+      font-size: $fr-label-font;
+      line-height: 1;
+      margin: 0;
+      padding: 6px 12px;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+   }
+   
+   .result {
+      background-color: $fr-background;
+//       background-color: #E9DCFF;
+// background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23E9DCFF' width='11' height='11'/%3E%3Crect fill='%23e9dbff' x='10' width='11' height='11'/%3E%3Crect fill='%23e9dbff' y='10' width='11' height='11'/%3E%3Crect fill='%23e9daff' x='20' width='11' height='11'/%3E%3Crect fill='%23e9d9ff' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23e8d9ff' y='20' width='11' height='11'/%3E%3Crect fill='%23e8d8ff' x='30' width='11' height='11'/%3E%3Crect fill='%23e8d7ff' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23e8d6ff' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%23e8d6ff' y='30' width='11' height='11'/%3E%3Crect fill='%23e8d5ff' x='40' width='11' height='11'/%3E%3Crect fill='%23e8d4ff' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23e8d4ff' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23e8d3ff' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23e8d2ff' y='40' width='11' height='11'/%3E%3Crect fill='%23e8d1ff' x='50' width='11' height='11'/%3E%3Crect fill='%23e8d1ff' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23e8d0ff' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23e8cfff' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23e8ceff' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23e8ceff' y='50' width='11' height='11'/%3E%3Crect fill='%23e8cdff' x='60' width='11' height='11'/%3E%3Crect fill='%23e8ccff' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23e8cbff' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23e8cbff' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23e8caff' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23e8c9ff' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23e8c8ff' x='70' width='11' height='11'/%3E%3Crect fill='%23e8c8ff' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23e8c7ff' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23e8c6ff' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23e9c5ff' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23e9c4ff' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23e9c4ff' x='80' width='11' height='11'/%3E%3Crect fill='%23e9c3ff' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23e9c2ff' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%23e9c1ff' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%23e9c0ff' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%23e9c0ff' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23eabfff' x='90' width='11' height='11'/%3E%3Crect fill='%23eabeff' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23eabdff' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23eabcff' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23eabcff' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23eabbff' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23ebbaff' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23ebb9ff' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23ebb8ff' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23ebb7ff' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23ebb7ff' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23ecb6ff' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23ecb5ff' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23ecb4ff' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23ecb3ff' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23edb2ff' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23edb1ff' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23edb1ff' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23edb0ff' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23eeafff' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23EEAEFF' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+// background-attachment: fixed;
+// background-size: cover;
+      border: 1px solid $fr-border-color;
+      border-radius: $fr-border-radius;
+      padding: 20px;
+      position: relative;
+   
+      &:not(:last-child) {
+         margin-bottom: 15px;
+      }
+   
+      .resultContent {
+         display: flex;
+      }
+
+
+      .title {
+         color: $title-color;
+         font-size: $title-font-size;
+         text-decoration: none;
+         transition: color 0.3s ease;
+
+         &:hover {
+            color: $title-hover-color;
+            text-decoration: none;
+         }
+      }
+
+      .description {
+         font-size: $description-font-size;
+         line-height: 1.6;
+         margin: 0;
+      }
+
+      .url {
+         color: $url-color;
+         font-size: $url-font-size;
+         margin-bottom: 0;
+         margin-top: 10px;
+         word-break: break-word;
+      }
+   
+      .thumbnail {
+         margin-left: 0;
+         margin-right: 15px;
+         display: none;
+   
+         img {
+            object-position: left top;
+         }
+   
+         @media screen and (min-width: $mobile-breakpoint) {
+            display: block;
+         }
+      }
+   
+      .descriptionContainer {
+         display: flex;
+         margin-top: 10px;
+   
+         .thumbnail {
+            display: block;
+   
+            @media screen and (min-width: $mobile-breakpoint) {
+               display: none;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,55 @@
+.sbDbFields {
+   border-collapse: collapse;
+   overflow: hidden;
+   width: 100%;
+   
+   tr {
+      &:not(:last-child) {
+         border-bottom: 1px solid #ddd;
+      }
+      
+      &:hover {
+         background-color: #fcf7fc;
+      }
+   }
+   
+   th, td {
+      padding: 10px 6px;
+   }
+   
+   th {
+      color: #333;
+      font-size: 13px;
+      text-align: left;
+      vertical-align: top;
+   }
+   
+   td {
+      font-size: 15px;
+      padding-left: 24px;
+      word-break: break-all;
+      width: 80%;
+
+      p {
+         margin: 0;
+         
+         & + p {
+            margin-top: 8px;
+         }
+      }
+      
+      &.errorItem {
+         padding-left: 0;
+      }
+   }
+
+   .headersToggle {
+      background-color: #5c38a1;
+      border: 1px solid #5c38a1;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px 7px;
+      margin-bottom: 30px;
+   }
+}

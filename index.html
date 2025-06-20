@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <title>SearchBlox: Hybrid Search</title>
+
+   <link rel="shortcut icon" href="/favicon.ico" type="icon/ico">
+   <!-- <link rel="shortcut icon" href="/favicon.png" type="image/png"> -->
+
+   <!-- <script src="https://unpkg.com/react-scan/dist/auto.global.js" defer></script> -->
+
+   <script type="module" src="/facet.js" defer></script>
+
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+
+         &:has(#sb-root) {
+               scrollbar-gutter: stable;
+
+               &::-webkit-scrollbar {
+                  width: 10px;
+               }
+
+               &::-webkit-scrollbar-thumb {
+                  background-color: #8972be;
+                  border-radius: 8px;
+               }
+
+               &::-webkit-scrollbar-track {
+                  background-color: #f9efff;
+               }
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div id="sb-root"></div>
+   <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

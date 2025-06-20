@@ -1,0 +1,45 @@
+$rq-heading-color: #333;
+$rq-color: #7d4dde;
+$rq-border-color: #d8d8d8;
+
+
+:global(#sb-root) {
+   .relatedQueriesContainer {
+      border: 1px solid $rq-border-color;
+      border-radius: .3rem;
+      padding: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+   }
+
+   .relatedQueries {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      .heading {
+         color: $rq-heading-color;
+         font-size: 14px;
+         font-weight: 600;
+         margin-bottom: 10px;
+      }
+
+      li {
+         line-height: 1;
+
+         &:not(:last-child) {
+            margin-bottom: 10px;
+         }
+      }
+
+      button {
+         background-color: transparent;
+         border: none;
+         color: $rq-color;
+         cursor: pointer;
+         font-size: 12px;
+         padding: 0;
+         text-align: left;
+      }
+   }
+}

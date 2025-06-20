@@ -1,0 +1,53 @@
+@use '../../sb/css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+.topQueries {
+   margin: 0;
+   padding: 0;
+   
+   display: flex;
+   align-items: center;      
+   // justify-content: center;
+   flex-wrap: wrap;
+   gap: .8rem;
+
+   // @media screen and (min-width: variables.$tablet-breakpoint) {
+   //    justify-content: flex-start;
+   // }
+
+   button {
+      background-color: #d4c7ff;
+      border: 1px solid transparent;
+      border-radius: 30px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      color: #382169;
+      // font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      padding: 6px 20px;
+      padding-left: 14px;
+      text-align: left;
+      transition: .3s ease;
+      width: 100%;
+      
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .3rem;
+      
+      svg {
+         width: 16px;
+         height: 16px;
+      }
+      
+      &:hover {
+         background-color: #9872e3;
+         box-shadow: none;
+         color: #260e46;
+         translate: 0 1px;
+      }
+   }  
+}

@@ -1,0 +1,23 @@
+.debugResponse {
+   background-color: #f5ebff;
+   // border: 1px solid #e0d5ff;
+   border-radius: 12px;
+   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05),rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+   color: #4e219b;
+   font-size: 14px;
+   padding: 20px;
+   word-break: break-word;
+   
+   height: 70vh;
+   overflow-y: auto;
+   
+   .jsonLabel {
+      color: #4b4b4b;
+      font-weight: 600;
+      margin-right: 4px;
+   }
+   
+   .jsonUndefined, .jsonNull {
+      color: #dd3737;
+   }
+}

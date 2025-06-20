@@ -1,0 +1,99 @@
+:global(#sbChat) {
+   .chatHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      
+      background-color: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.1);
+      
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 8px 16px;
+      
+      .chatHeaderTitle {
+         color: #7e7e7e;
+         font-size: 14px;
+         font-weight: 600;
+         margin: 0;
+
+         display: flex;
+         align-items: center;
+         gap: 6px;
+
+         svg {
+            width: 20px;
+            height: 20px;
+            color: #a64ac9;
+         }
+         
+         .chatHeaderName {
+            color: #37135b;
+            font-size: 14px;
+            font-weight: 600;
+         }
+      }
+      
+      .chatHeaderBtns {
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         
+         button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+         }
+         
+         svg {
+            width: 20px;
+            height: 20px;
+         }
+      }
+   
+      .chatReset {
+         color: #7916dc;
+         transition: all 0.2s ease-out;
+         
+         svg {
+            width: 22px;
+            height: 22px;
+            transition: all 0.2s ease-out;
+         }
+      
+         &:hover {
+            svg {
+               opacity: 0.8;
+               rotate: 180deg;
+            }
+         }
+      }
+      
+      .chatCloseBtn {
+         color: #24212b;
+         border: none;
+         border-radius: 30px;
+         // color: #fff;
+         
+         svg {
+            width: 24px;
+            height: 24px;
+            transition: all 0.2s ease-out;
+         }
+   
+         &:hover {
+            svg {
+               opacity: 0.8;
+               rotate: 90deg;
+            }
+         }
+      }
+   }
+   
+}
+

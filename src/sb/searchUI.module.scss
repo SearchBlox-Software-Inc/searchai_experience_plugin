@@ -1,0 +1,34 @@
+@use './css/variables' as variables;
+
+
+// ================================================================================================
+
+
+:global(#sb-root) {
+   .generatedContentContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      &:not(:empty) {
+         border-bottom: 1px solid #e0e0e0;
+         margin-bottom: 30px;
+         padding-bottom: 30px;
+      }
+
+      @media screen and (min-width: variables.$desktop-breakpoint) {
+         flex-direction: row;
+         align-items: flex-start;
+      }
+
+      & > * {
+         flex: 1 1 50%;
+      }
+   }
+
+   .resultsHeaderMenu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+}

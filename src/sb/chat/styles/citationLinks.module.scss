@@ -1,0 +1,35 @@
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sbChat), :global(#sb-root) {
+   .citation {
+      color: variables.$accent-color;
+      padding: 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      display: inline-block;
+
+      &:hover {
+         opacity: 0.8;
+
+         svg {
+            translate: 0 3px;
+         }
+      }
+      
+      & + .citation {
+         margin-left: 4px;
+      }
+      
+      svg {
+         width: 18px;
+         height: 18px;
+         translate: 0 2px;
+         transition: transform 0.6s ease;
+      }
+   }
+}

@@ -1,0 +1,144 @@
+$faqs-title-color :#6043a0;
+$faqs-url-color: #5f5b68;
+
+:global(#sb-root) {
+
+   .faq {
+      .faqHeader {
+         cursor: pointer;
+         text-align: left;
+         position: relative;
+         padding: 12px 0;
+         width: 100%;
+         
+         display: flex;
+         align-items: flex-start;
+         justify-content: space-between;
+         gap: 30px;
+         
+         &:focus {
+            outline: none;
+         }
+         
+         &:focus-visible {
+            outline: 2px solid #000;
+         }
+         
+         svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+         }
+      }
+      
+      .question {
+         color: $faqs-title-color;
+         font-size: 15px;
+         font-weight: 500;
+         margin: 0;
+         line-height: 1.6;
+      }
+      
+      .faqBody {
+         transition: height 0.2s ease;
+      }
+      
+      .answer {
+         line-height: 1.5;
+         margin: 0 0 10px;
+         font-size: 14px;
+         text-wrap: pretty;
+         word-break: break-word;
+      }
+      
+      .viewMore {
+         background: none;
+         border: none;
+         color: $faqs-url-color;
+         cursor: pointer;
+         display: inline;
+         font-size: 0.9em;
+         font-weight: 600;
+         margin: 0;
+         padding: 0;
+         text-decoration: none; 
+         text-transform: lowercase;
+      }
+      
+      .url {
+         display: block;
+         font-size: 13px;
+         color: $faqs-url-color;
+         
+         &:hover {
+            color: $faqs-url-color;
+         }
+      }
+      
+      
+      .content {
+         padding-bottom: 12px;
+      }
+   }
+
+   .feedback {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      
+      .buttonWrapper {
+         display: flex;
+         align-items: center;
+      }
+      
+      button {
+         border: none;
+         background-color: transparent;
+         padding: 0;
+         font-size: 15px;
+         color: #686464;
+         cursor: pointer;
+         
+         &:focus {
+            outline: none;
+         }
+         
+         &:focus-visible {
+            outline: 2px solid #000;
+         }
+      }
+      
+      .downvoteBtn {
+         transform: translateY(3px);
+      }
+      
+      .upvoteBtn:hover,
+      .upvoteBtn.active {
+         color: #2eb82e;
+      }
+      
+      .downvoteBtn:hover,
+      .downvoteBtn.active {
+         color: #a30300;
+      }
+      
+      .voteCount {
+         font-size: 14px;
+         margin-left: 5px;
+         translate: 0 0px;
+      }
+   }
+   
+   .selectedFAQ {
+      
+      .question {
+         margin-bottom: 12px;
+         margin-top: 0px;
+      }
+      
+      .feedback {
+         padding-left: 0;
+      }
+   }
+}

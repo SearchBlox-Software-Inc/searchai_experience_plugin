@@ -1,0 +1,118 @@
+@use './../../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sbChat) {
+
+   .chatMessagesList {
+      margin: 0;
+      overflow-y: auto;
+      padding: 12px 8px;
+      scrollbar-gutter: stable;
+   
+      scroll-behavior: smooth;
+      
+      @media screen and (min-width: variables.$mobile-breakpoint) {
+         padding: 20px 15px 18px;
+      }
+      
+      &::-webkit-scrollbar {
+         width: 6px;
+   
+         &-track {
+            background: transparent;
+         }
+   
+         &-thumb {
+            background: #ccc;
+            border-radius: 16px;
+         }
+      }
+      
+      li {
+         display: flex;
+         justify-content: flex-start;
+         gap: 10px;
+         
+         &:not(:last-child) {
+            margin-bottom: 15px;
+         }
+         
+         &.user {
+            justify-content: flex-end;
+            margin-left: 25px;
+            
+            @media screen and (min-width: variables.$mobile-breakpoint) {
+               margin-left: 45px;
+            }
+            
+            .chatMessageWrapper {
+               background-color: #7538ca;
+               border-bottom-right-radius: 0;
+               color: #fff;
+            }
+            
+         }
+         
+         &.bot {
+            margin-right: 25px;
+            
+            @media screen and (min-width: variables.$mobile-breakpoint) {
+               margin-right: 45px;
+            }
+            
+            .chatMessageWrapper:not(:has(.chatAction)) {
+               border-bottom-left-radius: 0;
+            }
+            
+            .chatSpeaker {
+               color: variables.$accent-color;
+            }
+         }
+      }
+   }
+   
+   .chatMessageWrapper {
+      background-color: #faeeff;
+      border: 1px solid #e3e3e3;
+      border-radius: 24px;
+      box-shadow: 0 4px 8px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+      font-size: 13px;
+      line-height: 1.4;
+      min-width: 200px;
+      overflow: hidden;
+      position: relative;
+      word-break: break-word;
+      transition: all .4s ease-in-out;
+      
+      
+      &.loading {
+         min-width: initial;
+         border-bottom-left-radius: 0;
+      }
+      
+   }
+   
+   
+   .chatMessage {
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 10px;
+      word-break: break-word;
+   
+      @media screen and (min-width: variables.$mobile-breakpoint) {
+         font-size: 14px;
+         padding: 15px;
+      }
+   }
+   
+   .chatSpeaker {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      margin: 0 0 6px;
+   }
+}

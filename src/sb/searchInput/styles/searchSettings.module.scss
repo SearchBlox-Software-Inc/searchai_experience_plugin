@@ -1,0 +1,163 @@
+$accent-color: #7d4dde;
+
+:global(#sb-root) {
+   .searchSettings {
+      position: relative;
+
+      .toggle {
+         background-color: transparent;
+         border: none;
+         cursor: pointer;
+
+         display: grid;
+         place-items: center;
+         padding: 0;
+         color: #5c38a1;
+         transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+         svg {
+            width: 22px;
+            height: 22px;
+         }
+
+         &:hover {
+            color: #84789b;
+            translate: 0 1px;
+         }
+      }
+
+      .dropdown {
+         padding: 20px 25px;
+         right: -55px;
+
+         @media screen and (min-width: 640px) {
+            right: 0;
+         }
+
+         h2 {
+            border-bottom: 1px solid #e9e9e9;
+            color: #474747;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            text-align: center;
+            text-transform: uppercase;
+         }
+      }
+
+      .settingRow {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: flex-start;
+         gap: 10px;
+         border-bottom: 1px solid #ddd;
+         margin-bottom: 20px;
+         padding-bottom: 20px;
+
+         &.disabled {
+            opacity: .3;
+            pointer-events: none;
+            cursor: not-allowed;
+         }
+
+         .settingLabel {
+            // flex: 1 0 120px;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            text-align: left;
+
+
+         }
+
+         .settingValue {
+            flex: 1 1 100%;
+         }
+      }
+
+      .searchRatioDisplay {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 10px;
+
+         .searchRatioDisplayItem {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            flex: 1;
+
+            &:last-child:not(:only-child) {
+               align-items: flex-end;
+            }
+
+            .searchRatioDisplayLabel {
+               color: #5f5f5f;
+               font-size: 12px;
+               font-weight: 600;
+               line-height: 1;
+               text-align: left;
+
+
+               &.disabled {
+                  opacity: .3;
+               }
+            }
+
+            .searchRatioDisplayValue {
+               color: #7551bd;
+               font-size: 16px;
+               line-height: 1;
+               text-align: left;
+
+               &.disabled {
+                  opacity: .3;
+               }
+            }
+
+            p {
+               margin: 0;
+            }
+         }
+      }
+
+
+
+      .actions {
+         margin-top: 20px;
+         display: flex;
+         justify-content: space-between;
+         gap: 10px;
+
+         button {
+            background-color: transparent;
+            border: none;
+            border-radius: 30px;
+            flex: 1;
+            padding: 10px 15px;
+            transition: 0.2s ease;
+
+         }
+
+         .cancelBtn {
+            background-color: #f0f0f0;
+
+            &:hover {
+               background-color: #f9f9f9;
+            }
+         }
+
+         .applyBtn {
+            background-color: $accent-color;
+            color: #fff;
+
+            &:hover {
+               background-color: #9872e3;
+            }
+         }
+      }
+   }
+}

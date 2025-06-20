@@ -1,0 +1,49 @@
+
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sbChat) .chatPrompts {
+   background-color: #fff;
+   border: 1px solid #e1e2e3;
+   border-radius: 20px;
+   box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, .05), 0 -4px 10px -4px rgba(0, 0, 0, .1);
+   margin: 0;
+   padding: 16px 4px;
+   
+   position: absolute;
+   bottom: calc(100% + 10px);
+   left: 0;
+   right: 0;
+   
+   li {
+      line-height: 1;
+      
+      &:not(:last-child) {
+         margin-bottom: 12px;
+      }
+   }
+   
+   button {
+      background-color: transparent;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.25;
+      padding: 0.4rem 1.2rem;
+      text-align: left;
+      width: 100%;
+      
+      &:focus,
+      &:hover {
+         background-color: #f9efff;
+         color: variables.$accent-color;
+      }
+
+      &:focus {
+         outline-color: #704bb2;
+      }
+   }
+}

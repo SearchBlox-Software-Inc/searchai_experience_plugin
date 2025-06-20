@@ -1,0 +1,48 @@
+@use './../../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sbChat) .chatToggle {
+   background-color: variables.$accent-color;
+   border: none;
+   border-radius: 50%;
+   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.25);
+   
+   color: #fff;
+   height: 40px;
+   width: 40px;
+   transition: all .25s ease-out;
+
+   display: grid;
+   place-items: center;
+   
+   @media screen and (min-width: variables.$mobile-breakpoint) {
+      height: 50px;
+      width: 50px;
+   }
+   
+   svg,
+   path {
+      width: 25px;
+      height: 25px;
+      color: #fff;
+      stroke-width: 1.5;
+      
+      @media screen and (min-width: variables.$mobile-breakpoint) {
+         width: 30px;
+         height: 30px;
+      }
+   }
+   
+   &:focus:not(:focus-visible) {
+      outline: none;
+   }
+   
+   &:hover {
+      background-color: #9872e3;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.25);
+      transform: translateY(1px);
+   }
+}

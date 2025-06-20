@@ -1,0 +1,69 @@
+@use './sb/css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+@font-face {
+   font-family: "Inter";
+   src: url('./assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+}
+
+#sb-root {
+   color: #050b10;
+   font-family: "Inter";
+   line-height: 1.5;
+   
+   * {
+      box-sizing: border-box;
+   }
+
+
+   ::selection {
+      background-color: #7639e2;
+      color: #fff;
+   }
+   
+   
+   button {
+      font-family: inherit;
+      
+      &:focus:not(:focus-visible) {
+         outline: none;
+      }
+      
+      &:not(:disabled) {
+         cursor: pointer;
+      }
+   }
+   
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      margin: 0;
+   }
+   
+   li {
+      list-style: none;
+   }
+   
+   fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+   }
+   
+   highlight {
+      font-weight: bold;
+   }
+   
+
+   .no-highlight a highlight,
+   .no-highlight p highlight {
+      font-weight: normal;
+   }
+   
+}

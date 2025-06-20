@@ -1,0 +1,138 @@
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sbChat) {
+   .chatInputContainer {
+      background-color: #eae7fb;
+      border: 1px solid #e9e9e9;
+      border-radius: 30px;
+      box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, .1);
+      padding: 0 4px 0 8px;
+      transition: all 0.2s ease-in-out;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+
+      @media screen and (min-width: variables.$mobile-breakpoint) {
+         padding: 0 6px 0 14px;
+
+         bottom: 16px;
+         left: 16px;
+         right: 16px;
+      }
+
+
+      &:focus-within {
+         box-shadow: inset 0 0 2px 1px #c4a9dc;
+      }
+
+
+      .chatInputWrapper {
+         flex-grow: 1;
+         position: relative;
+
+         input {
+            background-color: transparent;
+            border: none;
+            flex-grow: 1;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+
+            width: 100%;
+            height: 40px;
+
+            &:focus {
+               outline: none;
+            }
+
+            &::placeholder {
+               color: #555;
+               font-size: 14px;
+            }
+
+            @media screen and (min-width: variables.$mobile-breakpoint) {
+               height: 50px;
+            }
+         }
+
+      }
+
+      .chatVoiceInput {
+         background-color: transparent;
+         border: none;
+         line-height: 1;
+         padding: 0;
+         transition: .2s ease-in-out;
+
+         &:hover {
+            translate: 0 1px;
+            opacity: .8;
+         }
+
+         svg {
+            color: #7e2ad1;
+            height: 20px;
+            width: 20px;
+         }
+
+         &.recording {
+            svg {
+               color: #ec2525;
+            }
+         }
+      }
+
+
+      .chatInputBtns {
+         display: flex;
+         gap: 8px
+      }
+
+      .chatInputBtn {
+         background-color: variables.$accent-color;
+         background-image: linear-gradient(to bottom, #8625e0, #8320df, #801adf, #7d14de, #7a0bde);
+         border: none;
+         border-radius: 30px;
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+         font-size: 12px;
+         color: #fff;
+         cursor: pointer;
+         font-weight: bold;
+
+         height: 40px;
+         width: 40px;
+
+         display: grid;
+         place-items: center;
+         transition: .2s ease-in-out;
+
+         svg {
+            height: 18px;
+            width: 18px;
+            translate: -1px 0;
+
+            @media screen and (min-width: variables.$mobile-breakpoint) {
+               height: 22px;
+               width: 22px;
+            }
+         }
+
+         &:hover {
+            color: #e7e7e7;
+            opacity: 0.8;
+            translate: 0 1px;
+            rotate: -5deg;
+         }
+      }
+   }
+}

@@ -1,0 +1,48 @@
+:global(#sb-root) {
+   .resultSkeleton {
+      width: 100%;
+   
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      
+      .skeletonContent {
+         flex-grow: 1;
+   
+         display: flex;
+         flex-direction: column;
+   
+         .skeletonTitle {
+            width: 60%;
+            height: 18px;
+            margin-bottom: 16px;
+         }
+   
+         .skeletonDescription {  
+            width: 100%;
+            margin-bottom: 0;
+   
+            & + .skeletonDescription {
+               margin-top: 12px;
+               width: 90%;
+            }
+         }
+   
+         .skeletonUrl {
+            width: 40%;
+            height: 14px;
+            margin-top: 12px;
+         }
+      }
+   
+      .skeletonImage {
+         width: 240px;
+         height: 140px;
+      }
+   
+      & + .resultSkeleton {
+         margin-top: 32px;
+      }
+   }
+}

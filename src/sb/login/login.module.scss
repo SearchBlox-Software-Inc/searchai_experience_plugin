@@ -1,0 +1,257 @@
+$mobile-breakpoint: 576px;
+$tablet-breakpoint: 768px;
+
+$font-family: "Inter";
+
+:global(#sb-root) {
+
+   .sbLogin { 
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2183%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2184%26quot%3b)'%3e%3c/rect%3e%3cpath d='M27 1080L1107 0L1483.5 0L403.5 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient2185%26quot%3b)'%3e%3c/path%3e%3cpath d='M650.6 1080L1730.6 0L2417.6 0L1337.6 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient2185%26quot%3b)'%3e%3c/path%3e%3cpath d='M1858 1080L778 0L409 0L1489 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient2186%26quot%3b)'%3e%3c/path%3e%3cpath d='M1269.4 1080L189.4000000000001 0L-601.0999999999999 0L478.9000000000001 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient2186%26quot%3b)'%3e%3c/path%3e%3cpath d='M1174.867944690317 1080L1920 334.867944690317L1920 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient2185%26quot%3b)'%3e%3c/path%3e%3cpath d='M0 1080L745.132055309683 1080L 0 334.867944690317z' fill='url(%26quot%3b%23SvgjsLinearGradient2186%26quot%3b)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2183'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='119.44%25' x2='89.06%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2184'%3e%3cstop stop-color='rgba(71%2c 12%2c 156%2c 1)' offset='0.01'%3e%3c/stop%3e%3cstop stop-color='rgba(143%2c 33%2c 193%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient2185'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 0.16)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(255%2c 255%2c 255%2c 0.16)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient2186'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 0.16)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(255%2c 255%2c 255%2c 0.16)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+      height: calc(100vh);
+      padding: 15px;
+      font-family: $font-family;
+   }
+
+   
+   .sbLoginContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      margin-block: auto;
+
+      &::before, &::after {
+         content: "";
+         width: 100%;
+         height: 2px;
+         border-radius: 30px;
+         background-color: #fff;
+         background: linear-gradient(to left , #eee, transparent);
+         flex-shrink: 1;
+         
+      }
+
+      &::after {
+         background: linear-gradient(to right, #eee, transparent);
+      }
+      
+      .loginForm {
+         flex-shrink: 0;
+         
+         background-color: #fff;
+         border: none;
+         border-radius: 30px;
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+         max-width: 500px;
+         margin: 0;
+         width: 100%;
+         padding: 25px;
+         transition: .2s ease-in;
+
+         &:focus-within {
+            transform: scale(1.01);
+         }
+         
+         @media screen and (min-width: $tablet-breakpoint) {
+            padding: 40px 60px;
+         }
+      }
+      
+      .sbLoginContainerHead {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 16px;
+         margin-bottom: 36px;
+      }
+      
+      h1,
+      legend {
+         font-size: 16px;
+         font-weight: 600;
+         
+         @media screen and (min-width: $tablet-breakpoint) {
+            font-size: 20px;
+            font-weight: 700
+         }
+      }
+      
+      legend {
+         margin-bottom: 18px;
+         text-align: center;
+      }
+      
+      .sbFormGroup:not(:last-of-type) {
+         margin-bottom: 24px;
+      }
+      
+      .sbInputGroup {
+         position: relative;
+         
+         .inputIcon {
+            color: #7d7b83;
+            line-height: 1;
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            
+            svg {
+               height: 1.2em;
+               width: 1.2em;
+            }
+         }
+      }
+      
+      .loginLabel {
+         color: #452c80;
+         font-weight: 600;
+         display: inline-block;
+         font-size: 12px;
+         margin-bottom: 4px;
+      }
+      
+      .loginInput {
+         background-color: #f9f7ff;
+         border: none;
+         border-radius: 8px;
+         box-shadow: 0 1px 1px -1px rgba(165, 180, 196, .30), 0 3px 2px -2px rgba(165, 180, 196, .20), inset 0 0 0 1px rgba(19, 34, 149, .20);
+         color: #3b454f;
+         font-family: $font-family;
+         font-feature-settings: "kern";
+         font-kerning: normal;
+         font-size: 14px;
+         font-weight: 400;
+         letter-spacing: -.005em;
+         line-height: 1em;
+         padding: 12px 40px;
+         width: 100%;
+         height: 40px;
+         transition: .2s ease-in;
+         
+         &:focus {
+            background-color: #ede9ff;
+            background-image: linear-gradient(0deg, #7d4dde, #5c38a1 2px, transparent 0, transparent);
+            background-size: 100% 100%;
+            box-shadow: 0 1px 1px -1px rgba(0, 0, 0, .20), 0 4px 4px -2px rgba(0, 0, 0, .20), inset 0 0 0 1px rgba(19, 34, 149, .10);
+            outline: none;
+         }
+      }
+      
+      .loginError {
+         color: #ef6464;
+         font-size: 14px;
+         margin: 0;
+      }
+      
+      .passwordToggle {
+         background-color: transparent;
+         border: none;
+         color: #724dca;
+         padding: 0;
+
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         
+         position: absolute;
+         right: 8px;
+         top: 50%;
+         transform: translateY(-50%);
+
+         svg {
+            height: 1.6em;
+            width: 1.6em;
+         }
+      }
+      
+      .sbLoginButton {
+         background-color: #7d4dde;
+         background-image: linear-gradient(to bottom, #8625e0, #8320df, #801adf, #7d14de, #7a0bde);
+         border: none;
+         border-radius: 30px;
+         color: #fff;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 10px;
+         height: 40px;
+         font-size: 14px;
+         font-weight: 500;
+         line-height: 10px;
+         margin: 35px auto 0;
+         width: 100%;
+         transition: .2s ease-in;
+         background-size: 100% 300%;
+         background-position: 0 0;
+
+         .loginButtonLoader {
+            height: 1.2em;
+            width: 1.2em;
+            animation: spin 1s linear infinite;
+
+            @keyframes spin {
+               0% {
+                  transform: rotate(0deg);
+               }
+               
+               100% {
+                  transform: rotate(360deg);
+               }
+            }
+         }
+         
+         &:hover {
+            opacity: 0.8;
+         }
+      }
+      
+      .helpText {
+         border-top: 1px solid #E9EDF2;
+         font-size: 14px;
+         line-height: 1.5;
+         margin: 35px 0 0;
+         padding-top: 35px;
+         text-align: center;
+         
+         a {
+            color: #5c38a1;
+            
+            &:hover {
+               color: #7d4dde;
+            }
+         }
+      }
+
+   }
+   
+   .copyrightText {
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+   }
+   
+   :global(.Toastify__toast-theme--colored.Toastify__toast--error) {
+      background-color: #ffffff;
+      border: 1px solid #ffffff;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      color: #2e2e2e;
+
+      :global(.Toastify__toast-icon) svg {
+         color: #ef6464;
+      }
+   }
+   
+   :global(.Toastify__close-button) {
+      color: #2e2e2e;
+   }
+}

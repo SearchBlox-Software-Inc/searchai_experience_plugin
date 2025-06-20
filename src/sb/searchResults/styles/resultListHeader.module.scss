@@ -1,0 +1,35 @@
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sb-root) {
+
+   .resultListHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      
+      margin-bottom: 20px;
+      
+      @media screen and (min-width: variables.$tablet-breakpoint) {
+         align-items: center;
+         flex-direction: row;
+      }
+      
+      .resultListHeaderMenu {
+         display: flex;
+         align-items: center;
+         gap: 8px;
+      }
+   }
+
+   .resultsSummary {
+      margin: 0;
+      font-size: 1rem;
+      word-wrap: break-word;
+   }
+
+}

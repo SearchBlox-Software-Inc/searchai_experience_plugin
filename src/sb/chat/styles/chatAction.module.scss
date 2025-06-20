@@ -1,0 +1,67 @@
+@use '../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sbChat) .chatAction {
+   background-color: #382169;
+   padding: 10px;
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 14px;
+
+   & + .chatAction {
+      border-top: 1px solid #9279bb;
+   }
+   
+   @media screen and (min-width: 640px) {
+      font-size: 14px;
+      padding: 15px;
+   }
+   
+   p {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      word-break: break-word;   
+   }
+
+   a, button {
+      background-color: variables.$accent-color;
+      border-radius: 30px;
+      color: #fff;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 13px;
+      letter-spacing: 0px;
+      line-height: 1;
+      min-width: 60px;
+      padding: 8px 8px 8px 12px;
+      text-align: center;
+      text-decoration: none;
+      transition: .5s ease;
+      
+      flex-shrink: 0;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      
+      &:hover {
+         background-color: #fff;
+         color: variables.$accent-color;
+      }
+
+      svg {
+         width: 14px;
+         height: 14px;
+         translate: 0 -1px;
+      }
+   }
+}

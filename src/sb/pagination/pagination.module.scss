@@ -1,0 +1,89 @@
+$page-color: #5c38a1;
+$active-page-color: #fff;
+$active-page-bg: #7639e2;
+
+
+
+:global(#sb-root) {
+   .pagination {
+      display: block;
+      margin: 60px auto 30px;
+      
+      ul {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 4px;
+         margin-bottom: 0;
+         padding: 0;
+      }
+      
+      button {
+         background-color: #fff;
+         border: 1px solid transparent;
+         border-radius: 30px;
+         color: $page-color;
+         font-size: 13px;
+         line-height: 1;
+         padding: 4px;
+         min-width: 36px;
+         height: 36px;
+         transition: all 0.2s ease-in;
+
+         display: grid;
+         place-items: center;
+
+         
+         &.active {
+            background-color: $active-page-bg;
+            color: $active-page-color;
+         }
+         
+         &:focus-visible    {
+            outline-offset: -1px;
+         }
+         
+         &:not(.active):hover {
+            // border-color: $active-page-bg;
+            background-color: #F5EDFF;
+            // text-decoration: underline;
+            translate: 0 1px;
+         }
+      }
+
+      .paginationPrevious, .paginationNext {
+         background-color: #F5EDFF;
+         line-height: 1;
+
+         svg {
+            width: 20px;
+            height: 20px;
+         }
+         // padding: 4px 16px;
+      }
+   }
+   
+   .loadMoreButton {
+      background-color: $active-page-bg;
+      border: transparent;
+      border-radius: 30px;
+      color: #fff;
+      display: block;
+      font-size: 14px;
+      height: 40px;
+      line-height: 1;
+      margin: 60px auto 30px;
+      min-width: 180px;
+      padding: 10px 12px;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in;
+      &:hover {
+         background-color: #6f2db5;
+      }
+      
+      .searchSpinner {
+         padding: 0;
+      }
+   }
+}
+

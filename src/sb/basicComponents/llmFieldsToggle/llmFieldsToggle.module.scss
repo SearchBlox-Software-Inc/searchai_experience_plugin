@@ -1,0 +1,80 @@
+:global(#sb-root) {
+   .llmFieldsToggle {
+      padding-left: 8px;
+      border-left: 1px solid #ddd;
+      button.switch {
+         background-color: #ededed;
+         border: none;
+         border-radius: 30px;
+         color: #4c4c4c;
+         cursor: pointer;
+         font-size: 13px;
+         // font-weight: 700;
+         padding: 8px 16px;
+         padding-right: 10px;
+         transition: all 0.2s ease-out;
+         
+         display: flex;
+         align-items: center;
+         gap: 8px;
+
+         &:hover {
+            background-color: #e2e2e2;
+         }
+
+         &.active {
+            background-color: #007ac2;
+            color: #fff;
+         }
+
+         .label {
+            font-size: 13px;
+            white-space: nowrap;
+         }
+
+         .switchTrack {
+            position: relative;
+            width: 36px;
+            height: 12px;
+            background-color: #d6d6d6;
+            border-radius: 20px;
+            transition: background-color 0.2s ease-out;
+
+            .switchThumb {
+               position: absolute;
+               top: 50%;
+               left: 0;
+               transform: translateY(-50%);
+               width: 20px;
+               height: 20px;
+
+               background-color: white;
+               border: 2px solid #bebebe;
+               border-radius: 50%;
+               box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+               color: #007ac2;
+               transition: transform 0.2s ease-out;
+               
+               display: grid;
+               place-items: center;
+               
+               svg {
+                  width: 16px;
+                  height: 16px;
+               }
+            }
+         }
+         
+         &.active .switchTrack {
+            background-color: #bbbbbb;
+            
+            .switchThumb {
+               // background-color: #007ac2;
+               border-color: #007ac2;
+               // color: white;
+               transform: translateX(16px) translateY(-50%);
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,169 @@
+@use '../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sb-root) .hero {
+   
+   &Content {
+      padding: 2rem 0;
+      position: relative;
+      transition: padding 0.3s ease;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+
+      &.searched {
+         padding: 2rem 0 0;
+         gap: 1rem;
+
+         @media screen and (min-width: variables.$tablet-breakpoint) {
+            padding: 4rem 0 0;
+            gap: 1rem;
+         }
+      }
+   }
+
+   &Logo {
+      height: auto;
+      margin-bottom: 2em;
+      width: 280px;
+      
+      @media screen and (min-width: variables.$tablet-breakpoint) {
+         width: 320px;
+      }
+   }
+
+   .suggestionTitle {
+      color: #666;
+      flex-shrink: 0;
+      font-size: .8rem;
+      
+      margin: 0;
+      text-transform: uppercase;
+      padding: 0 .5rem;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 6px;
+
+      // @media screen and (min-width: variables.$tablet-breakpoint) {
+      //    font-size: .7rem;
+      // }
+
+      svg {
+         flex-shrink: 0;
+         color: #a64ac9;
+         width: 1.5rem;
+         height: 1.5rem;
+
+         @media screen and (min-width: variables.$tablet-breakpoint) {
+            width: 20px;
+            height: 20px;
+         }
+      }
+   }
+
+   &Suggestions {
+      background-color: #ffffff;
+      
+      border: 1px solid #f3ebff;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      width: 90%;
+      // max-width: 1024px;
+
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-start;
+      // justify-content: space-between;
+      gap: 2rem;
+
+      @media screen and (min-width: variables.$tablet-breakpoint) {
+         flex-direction: row;
+         padding: 2rem;
+      }
+
+
+      ul {
+         margin: 12px 0 0;
+         padding: 0;
+         width: 100%;
+
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-content: flex-start;
+         // gap: 1rem;
+         
+         li {
+            width: 100%;
+         }
+         button {
+            background-color: transparent;
+            border: none;
+            color: #382169;
+            width: 100%;
+            text-align: left;
+            padding: 0.5rem;
+            border-radius: 12px;
+            
+            font-size: 1rem;
+            line-height: 1.5;
+
+            &:hover {
+               background-color: #f9efff;
+            }
+         }  
+      }
+
+      &AutoSuggest {
+         flex-basis: 30%;
+         flex-grow: 1;
+         
+         border-bottom: 1px solid #eadcff;
+         padding-bottom: 2rem;
+
+         @media screen and (min-width: variables.$tablet-breakpoint) {
+            border-bottom: none;
+            border-right: 1px solid #eadcff;
+            padding-bottom: 0;
+            padding-right: 2rem;
+            
+            &:last-child {
+               border-right: none;
+               padding-right: 0;
+            }
+         }
+      }
+      
+      &SmartFAQs {
+         flex-basis: 70%;
+         flex-grow: 1;
+      }
+   }
+
+   &TopQueries {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      ul {
+         justify-content: center;
+      }
+   }
+
+   .heroLogout {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+   }
+}

@@ -1,0 +1,75 @@
+@use './../../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+$loader-dots-width: 4px;
+$loader-color1: variables.$accent-color;
+$loader-color2: rgba(variables.$accent-color, .5);
+$loader-color3: rgba(variables.$accent-color, .1);
+
+
+:global(#sbChat) .loading {
+   .chatMessageWrapper {
+      min-width: unset;
+      border-bottom-left-radius: 0;
+   }
+
+   .chatMessage {
+      display: inline-flex;
+      justify-content: center;
+      gap: $loader-dots-width;
+      
+      .dots,
+      &::before,
+      &::after {
+         width: $loader-dots-width;
+         height: $loader-dots-width;
+         border-radius: 50%;
+         background-color: variables.$accent-color;
+         color: variables.$accent-color;
+         animation: loading-dots .6s infinite linear alternate;
+      }
+      
+      &::before,
+      &::after {
+         content: '';
+         display: block;
+         animation-delay: 0s;
+      }
+      
+      .dots {
+         animation-delay: 0.2s;
+      }
+      
+      &::after {
+         animation-delay: 0.4s;
+      }
+   }
+   
+   @keyframes loading-dots {
+      0% {
+         background-color: $loader-color1;
+         translate: 0 0;
+         scale: 1;
+      }
+      
+      25% {
+         background-color: $loader-color2;
+      }
+      
+      50% {
+         background-color: $loader-color3;
+         translate: 0 2px;
+         scale: .75;
+      }
+      
+      100% {
+         background-color: $loader-color3;
+         translate: 0 0;
+         scale: 1;
+      }
+   }
+}
+

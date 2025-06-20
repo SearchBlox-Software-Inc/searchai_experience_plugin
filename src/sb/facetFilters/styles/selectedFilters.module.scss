@@ -1,0 +1,52 @@
+:global(#sb-root) {
+   .selectedFilters {
+      // border: 1px solid #ddd;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      // padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      
+      button {
+         background-color: #5c38a1;
+         border: 1px solid #5c38a1;
+         border-radius: 30px;
+         color: #fff;
+         font-size: 12px;
+         padding: 5px 10px;
+         display: flex;
+         align-items: center;
+         gap: 6px;
+         transition: transform 0.2s ease-in-out;
+
+         svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.2s ease-in-out;
+         }
+
+         &:hover {
+            background-color: #7655b5;
+            border-color: #7655b5;
+            color: #fff;
+
+            svg {
+               transform: rotate(90deg);
+            }
+         }
+         
+         
+         &.clearAll {
+            background-color: transparent;
+            color: #5c38a1;
+            font-weight: 600;
+
+            &:hover {
+               background-color: transparent;
+               color: #7655b5;
+            }
+         }
+      }
+   }
+}

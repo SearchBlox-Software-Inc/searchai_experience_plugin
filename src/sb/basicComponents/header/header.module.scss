@@ -1,0 +1,72 @@
+@use './../../css/variables' as variables;
+
+
+:global(#sb-root) {
+   .sbHeader {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      background: white;
+      box-shadow: rgba(50, 50, 93, 0.2) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+      
+      .sbHeaderContent {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 20px;
+         padding: 26px 0;
+         
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            flex-direction: row;
+            justify-content: space-between;
+            // padding: 35px 0 20px;
+         }
+      }
+      
+      &.results-shown,
+      &.visible {
+         transform: translateY(0);
+      }
+      
+      .sbLogo {
+         display: block;
+         width: 200px;
+         height: auto;
+      }
+   }
+   
+   
+   .headerMenus {
+      position: relative;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+   
+      &:only-child {
+         margin-left: auto;
+      }
+      
+      @media screen and (min-width: variables.$mobile-breakpoint) {
+         // margin-left: initial;
+         width: auto;
+         justify-content: flex-end;
+      }
+   
+      button {
+         background-color: transparent;
+         border: none;
+         font-size: 13px;
+         font-weight: 700;
+         line-height: 1;
+         padding: 0;
+         transition: 0.3s ease;
+      }
+   
+   }
+}

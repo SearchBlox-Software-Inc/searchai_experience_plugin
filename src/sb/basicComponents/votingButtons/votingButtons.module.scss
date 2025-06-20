@@ -1,0 +1,79 @@
+:global(#sbChat), :global(#sb-root) {
+
+   .votingBtns {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+      height: 18px;
+
+      button {
+         cursor: pointer;
+         background-color: transparent;
+         border: none;
+         padding: 0px 3px;
+      }
+
+      .upvote,
+      .downvote {
+         background-color: transparent;
+         border: none;
+         padding: 0px;
+
+         &:not(.active):hover svg {
+            translate: 0 1px;
+         }
+
+         &.active {
+            padding: 0;
+         }
+
+         &.hidden {
+            display: none;
+         }
+
+         svg,
+         path {
+            color: #998ca4;
+            width: 20px;
+            height: 20px;
+            transition: all .2s ease-in-out;
+         }
+      }
+
+      .upvote {
+
+         &:not(:disabled):hover,
+         &.active {
+
+            svg,
+            path {
+               color: #2eb82e;
+            }
+         }
+
+         &:not(.active):hover {
+
+            svg,
+            path {
+               translate: 0 -1px;
+            }
+         }
+      }
+
+      .downvote {
+         svg {
+            transform: scale(-1, 1);
+         }
+
+         &:not([disabled]):hover,
+         &.active {
+
+            svg,
+            path {
+               color: #a30300
+            }
+         }
+      }
+   }
+}

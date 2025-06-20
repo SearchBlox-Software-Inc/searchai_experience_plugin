@@ -1,0 +1,41 @@
+:global(#sb-root) {
+   .appSettingsLoader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 3rem;
+
+      .errorCode {
+         color: red;
+         font-size: 1.5rem;
+         font-weight: bold;
+      }
+   }
+
+   .appContainer {
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+   }
+
+   .barLoader {
+      height: 4px;
+      width: 120px;
+
+      --c: no-repeat linear-gradient(#7639e2 0 0);
+      background: var(--c), var(--c), #d7b8fc;
+      background-size: 60% 100%;
+      animation: bar-animation 3s infinite;
+
+      @keyframes bar-animation {
+         0%   {background-position:-150% 0,-150% 0}
+         66%  {background-position: 250% 0,-150% 0}
+         100% {background-position: 250% 0, 250% 0}
+      }
+   }
+}

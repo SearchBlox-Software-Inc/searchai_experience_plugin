@@ -1,0 +1,140 @@
+:global(#sb-root) {
+   .inputWrapper {
+      background-color: #f6f1ff;
+      border: 1px solid #e0e0e0;
+      border-radius: 30px;
+      box-shadow: inset rgba(50, 50, 93, 0.1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.1) 0px 1px 3px -1px;
+      padding: 0 .3rem 0 1rem;
+      position: relative;
+      // transition: all .3s ease-in-out;
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .5rem;
+
+      &:focus-within {
+         border-color: #7639e2;
+         outline: 5px auto #bfa2f1;
+      }
+
+      @media screen and (min-width: 768px) {
+         width: 70%;
+         max-width: 840px;
+      }
+
+
+   }
+
+   .searchInput {
+      background-color: transparent;
+      border: none;
+      color: #2c2c2c;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.3333333;
+      text-overflow: ellipsis;
+      transition: all ease-in-out 0.3s;
+
+      display: block;
+      height: 45px;
+      width: 100%;
+
+      &:focus {
+         outline: none;
+      }
+
+      // &.voiceSearchEnabled {
+      //    padding-right: 86px;
+      // }
+   }
+
+   .searchBtn {
+      background-color: #7639e2;
+      background-image: linear-gradient(to bottom, #8625e0, #8320df, #801adf, #7d14de, #7a0bde);
+      border-color: #7639e2;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      width: 65px;
+      height: 35px;
+      transition: 0.3s ease-in-out;
+
+      display: grid;
+      place-items: center;
+
+      svg {
+         width: 20px;
+         height: 20px;
+         transition: 0.2s ease-in-out;
+      }
+
+      &:hover {
+         color: #e7e7e7;
+         opacity: 0.8;
+         translate: 0 1px;
+      }
+   }
+
+
+   .inputButtons {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+
+      button {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: .2rem;
+      }
+   }
+
+   .clearSearchBtn {
+      background-color: transparent;
+      border: none;
+      color: #333;
+      padding: 0;
+      
+      &:hover {
+         color: #6a6a6a;
+
+         svg {
+            transform: rotate(90deg);
+         }
+      }
+
+      svg {
+         width: 14px;
+         height: 14px;
+         transition: 0.2s ease-in-out;
+      }
+   }
+
+   .voiceSearchBtn {
+      background-color: transparent;
+      border: none;
+      color: #704bb2;
+      padding: 0;
+      transition: all 0.2s ease;
+
+      display: grid;
+      place-items: center;
+
+      &:hover {
+         color: #333;
+         translate: 0 1px;
+      }
+
+      svg {
+         height: 18px;
+         width: 18px;
+      }
+
+      &.recording {
+         color: #a30300;
+      }
+   }
+}

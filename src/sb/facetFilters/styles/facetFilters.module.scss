@@ -1,0 +1,418 @@
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+$filters-head-enabled: false; //adds a div with 'Filters' heading and Clear button (if enabled) on top
+$clear-button-enabled: true;
+
+$facet-heading-font-size: 13px;
+$filter-font-size: 12px;
+
+$facet-heading-color: #474747;
+$filter-name-color: #380472;
+$filter-count-background: #fff;
+$filter-count-color: #380472;
+$active-filter-count-background: #7154a7;
+$active-filter-count-color: #fff;
+$more-button-color: #380472;
+
+$radio-button-color: #ad97d7;
+$active-radio-button-color: #5c38a1;
+
+
+// ------------------------------
+
+
+:global(#sb-root) {
+
+   .facetsContainer {
+      flex-basis: 30%;
+      flex-shrink: 0;
+      padding: 0;
+
+      
+      @media screen and (min-width: 900px) and (min-height: 840px) {
+         flex-basis: 25%;
+         // position: sticky;
+         // top: 120px;
+         z-index: 10;
+      }
+
+      @media screen and (min-width: 1200px) {
+         flex-basis: 20%;
+      }
+
+      
+      .facetsContainerHead,
+      .filtersHeadingContainer {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 8px;
+      }
+      
+      .facetsContainerHead {
+         padding: 20px 0;
+         
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            background-color: transparent;
+            padding: 20px 25px;
+            display: if($filters-head-enabled, flex, none); //enable in variable at the top
+         }
+      }
+      
+      .facetsContainerBody {
+         background-color: #fbfbfb;
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         // padding: 1em 20px;
+         
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            background-color: transparent;
+            // padding: 20px 25px;
+         }
+      }
+      
+      .filtersToggle,
+      .filtersClear {
+         background-color: transparent;
+         border: none;
+         padding: 0;
+      }
+      
+      .filtersToggle {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 8px;
+         
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            display: none;
+         }
+      }
+      
+      .filtersHeading {
+         font-size: 1.2em;
+         font-weight: bold;
+         line-height: 1;
+         margin-bottom: 0;
+      }
+      
+      .filtersClear {
+         font-size: 0.625em;
+         font-weight: bold;
+         text-transform: uppercase;
+         margin-left: 8px;
+         display: if($clear-button-enabled, block, none); // enable in variable at the top
+      }
+   }
+   
+   .facet {
+      background-color: #F5EDFF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpath fill='%23f3ebff' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%23efe3ff' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%23ebdcff' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%23e7d4ff' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%23E3CDFF' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%23e9d4ff' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%23eedbff' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%23f3e2ff' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%23f7e9ff' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%23FAF0FF' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+      background-size: cover;
+
+      border: 1px solid #f2dcff;
+      border-radius: 16px;
+      // border-bottom: 1px solid #ddd;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      padding: 1rem;
+      
+      summary {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         line-height: 1;
+         position: relative;
+         cursor: pointer;
+         
+         &::marker {
+            content: "";
+         }
+         
+         .caretIcon {
+            transition: transform 0.2s ease;
+         }
+      }
+      
+      &[open] summary .caretIcon {
+         transform: rotate(-180deg);
+      }
+      
+      .facetHeading {
+         color: $facet-heading-color;
+         font-size: $facet-heading-font-size;
+         font-weight: bold;
+         margin-bottom: 0;
+         transform: translateY(2px);
+         text-transform: uppercase;
+      }
+      
+      ul {
+         margin: 0;
+         padding: 20px 0 0;
+         
+         li {
+            display: flex;
+            align-items: center;
+            
+            &:not(:last-child) {
+               margin-bottom: 0.6rem;
+            }
+         }
+      }
+      
+      .facetDisplayButtons {
+         margin-top: 0.8rem;
+         
+         button {
+            background-color: transparent;
+            border: none;
+            color: $more-button-color;
+            font-size: 0.8em;
+            font-weight: 600;
+            padding: 0;
+            
+            &:not(:last-child) {
+               margin-right: 1rem;
+            }
+         }
+      }
+   }
+   
+   
+   .filter {
+      background-color: transparent;
+      border: none;
+      font-size: $filter-font-size;
+      min-height: 24px;
+      padding: 0;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      
+      &:not(.filterAll) {
+         justify-content: space-between;
+      }
+      
+      .filterNameWrapper {
+         display: flex;
+         align-items: center;
+      }
+      
+      .filterName {
+         color: $filter-name-color;
+         line-height: 1;
+         
+         @media screen and (min-width: 1200px) {
+            word-break: break-word;
+         }
+         
+      }
+      
+      .filterCount {
+         background-color: $filter-count-background;
+         border-radius: 4px;
+         color: $filter-count-color;
+         line-height: 1;
+         margin-left: 10px;
+         padding: 6px;
+      }
+      
+      .filterRadioButton, .filterCheckbox {
+         background-color: #fff;
+         border: 1px solid $radio-button-color;
+         border-radius: 50%;
+         margin-right: 8px;
+         flex-shrink: 0;
+         height: 18px;
+         width: 18px;
+         display: grid;
+         place-items: center;
+         
+         &::after {
+            content: "";
+            display: block;
+            background-color: transparent;
+            border-radius: 50%;
+            height: 12px;
+            width: 12px;
+         }
+      }
+      
+      .filterCheckbox {
+         border-radius: 4px;
+         
+         &::after {
+            display: none;
+            width: 4px;
+            height: 10px;
+            border: solid white;
+            border-radius: 0;
+            border-width: 0 2px 2px 0;
+            transform: translateY(-1px) rotate(45deg);
+         }
+      }
+      
+      &.active {
+         
+         &:not(.isCheckbox) {
+            pointer-events: none;
+         }
+         
+         .filterRadioButton {
+            border-color: $active-radio-button-color;
+            
+            &::after {
+               background-color: $active-radio-button-color;
+            }
+         }
+         
+         .filterCheckbox {
+            background-color: $active-radio-button-color;
+            border-color: $active-radio-button-color;
+
+            &::after {
+               display: block;
+            }
+         }
+         
+         .filterName {
+            font-weight: 600;
+         }
+         
+         .filterCount {
+            background-color: $active-filter-count-background;
+            color: $active-filter-count-color;
+         }
+      }
+      
+      &:focus-visible:not(.active),
+      &:hover:not(.active) {
+         .filterRadioButton, .filterCheckbox {
+            border-color: $active-radio-button-color;
+         }
+         
+         .filterName {
+            color: #544c72;
+         }
+         
+         .filterCount {
+            background-color: #d1acf3;
+         }
+      }
+      
+   }
+   
+   
+   
+   .filterDateRangeContainer {
+      position: relative;
+   }
+   
+   .filterDateRangeToggle {
+      // background-color: #F5EDFF;
+      // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpath fill='%23f3ebff' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%23efe3ff' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%23ebdcff' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%23e7d4ff' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%23E3CDFF' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%23e9d4ff' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%23eedbff' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%23f3e2ff' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%23f7e9ff' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%23FAF0FF' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
+      // background-attachment: fixed;
+      // background-size: cover;
+      // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+
+      border: 1px solid #ddd;
+      // border-radius: 16px;
+      // border-bottom: 1px solid #ddd;
+      padding: 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: transparent;
+      // border: none;
+      // padding: 0;
+      width: 100%;
+
+      .filterDateRangeWrapper {
+         display: flex;
+         align-items: center;
+         gap: 4px;
+
+         line-height: 1;
+      }
+      
+      .calendarIcon {
+         width: 16px;
+         height: 16px;
+      }
+      
+      .caretIcon {
+         transition: transform 0.2s ease;
+      }
+      
+      &.open .caretIcon {
+         transform: rotate(-90deg);
+      }
+   }
+   
+   .filterDateRangeButtons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      
+      button {
+         border: transparent;
+         border-radius: 30px;
+         font-size: 12px;
+         font-weight: 600;
+         line-height: 1.4;
+         padding: 8px 20px;
+         text-transform: uppercase;
+      }
+      
+      .go {
+         background-color: $active-radio-button-color;
+         color: #fff;
+      }
+      
+      .clear {
+         background-color: transparent;
+         color: $active-radio-button-color;
+      }
+   }
+
+   .filterDateRange {
+      padding: 10px;
+
+      top: calc(100% + 20px);
+      left: -20px;
+      z-index: 10;
+      
+      span {
+         font-size: 12px;
+      }
+      
+      @media screen and (min-width: 768px) {
+         padding: 20px 20px 20px 5px;
+         top: auto;
+         bottom: 0;
+         left: calc(100% + 20px);
+         right: auto;
+      }
+      
+      
+      .rdrDefinedRangesWrapper {
+         display: none;
+         
+         @media screen and (min-width: 768px) {
+            display: block;
+         }
+      }
+   }
+   
+   
+   
+}
