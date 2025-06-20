@@ -19,8 +19,10 @@ This is a core plugin for hybrid search. The search results can be fine-tuned by
 ## Getting Started
 
 ### Prerequisites 
+-  Make sure [SearchBlox SearchAI version 11.1](https://www.searchblox.com/downloads) has been downloaded and installed before proceeding further.
+
 -  Ensure [Node.js](https://nodejs.org/) (version 14 or higher) is installed.
--  The project uses [pnpm](https://pnpm.io/installation) as its package manager. Make sure it is installed before proceeding.
+-  The project uses [pnpm](https://pnpm.io/installation) as its package manager. Make sure pnpm version 8.0 or higher is installed before proceeding.
 
 ### Local Development and Deployment
 
@@ -50,6 +52,16 @@ Clone the repository and navigate to its directory. To run the plugin locally fo
 
    Rename the dist folder as desired, compress it to a ZIP file, and upload it through the Search Settings page in the SearchBlox admin console. When making changes, rebuild and upload the new ZIP file with the same name to update the existing plugin.
 
+   
+   ![Search Settings Navigation](https://github.com/SearchBlox-Software-Inc/searchai_experience_plugin/blob/main/src/assets/images/search-settings.png)
+
+
+
+   The URL of the deployed plugin will be available on successful upload:
+
+
+   ![Plugin Upload Success](https://github.com/SearchBlox-Software-Inc/searchai_experience_plugin/blob/main/src/assets/images/plugin-uploaded.png)
+   
 
 ## Configuration
 
